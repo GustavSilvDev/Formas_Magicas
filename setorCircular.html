@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="icon" type="image/png" href="images/icone.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setor Circular</title>
+    <link rel="stylesheet" href="stylesetorCircular.css">
+</head>
+<body>
+    <header class="formulario">
+        <div class="login-box">
+          <h2>Cálculo da Área</h2>
+          <form>
+
+            <div class="user-box">
+              <input type="text" id="angulo" required>
+              <label>Qual é o angulo do círculo</label>
+            </div>
+
+            <div class="user-box">
+                <input type="text" id="raio" required>
+                <label>Qual o raio do círculo</label>
+              </div>
+
+            <div class="botoes">
+            <a id="responda" href="#" onclick="calcularAreaSetorCircular()">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              Mandar
+            </a>
+            <a href="index.html">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                voltar
+              </a>
+            </div>
+          </form>
+          <div class="result" id="resultado"></div>
+        </div>
+
+      </header>
+
+      <script>
+        function calcularAreaSetorCircular() {
+  var angulo = parseFloat(document.getElementById("angulo").value); 
+  var raio = parseFloat(document.getElementById("raio").value);
+
+  var anguloRadianos = (angulo * Math.PI) / 180;
+
+  var areaSetorCircular = (anguloRadianos / (2 * Math.PI)) * Math.PI * Math.pow(raio, 2);
+
+  document.getElementById("resultado").innerHTML = areaSetorCircular.toFixed(2);
+}
+
+      </script>
+    
+</body>
+</html>

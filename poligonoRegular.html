@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <link rel="icon" type="image/png" href="images/icone.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poligono Regular</title>
+    <link rel="stylesheet" href="stylePoligono.css">
+</head>
+<body>
+    
+    <header class="formulario">
+        <div class="login-box">
+          <h2>Cálculo da Área</h2>
+          <form>
+
+            <div class="user-box">
+              <input type="text" id="lados" required>
+              <label>Qual é o numero de lados?</label>
+            </div>
+
+            <div class="user-box">
+                <input type="text" id="comprimentoLados" required>
+                <label>Qual o comprimento dos lados?</label>
+              </div>
+
+            <div class="botoes">
+            <a id="responda" href="#" onclick="calcularAreaPoligonoRegular()">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              Mandar
+            </a>
+            <a href="index.html">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                voltar
+              </a>
+            </div>
+          </form>
+          <div class="result" id="resultado"></div>
+        </div>
+
+      </header>
+
+    <script>
+
+function calcularAreaPoligonoRegular() {
+  var lados = parseFloat(document.getElementById("lados").value);
+  var comprimentoLados = parseFloat(document.getElementById("comprimentoLados").value);
+
+  if (lados < 3) {
+    document.getElementById("resultado").innerHTML = "O polígono deve ter pelo menos 3 lados.";
+  } else {
+    var pi = Math.PI;
+    const radianos = (2 * pi) / lados;
+
+    const areaPoligonoRegular = (lados * Math.pow(comprimentoLados, 2)) / (4 * Math.tan(Math.PI / lados));
+
+    document.getElementById("resultado").innerHTML = areaPoligonoRegular.toFixed(1);
+  }
+}
+
+
+    </script>
+</body>
+</html>

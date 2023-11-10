@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <link rel="icon" type="image/png" href="images/icone.png">
+
+    <link rel="stylesheet" href="stylecirculo.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo Área</title>
+</head>
+
+<body>
+
+    <header class="formulario">
+        <div class="login-box">
+          <h2>Cálculo da Área</h2>
+          <form>
+            <div class="user-box">
+              <input type="text" id="raio" required>
+              <label>Raio do Círculo</label>
+            </div>
+            <div class="botoes">
+            <a id="responda" href="#" onclick="calcularAreaCirculo()">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              Mandar
+            </a>
+            <a href="index.html">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                voltar
+              </a>
+            </div>
+          </form>
+          <div class="result" id="resultado"></div>
+        </div>
+
+      </header>
+      
+
+      
+      <script>
+        function calcularAreaCirculo() {
+          var raio = parseFloat(document.getElementById("raio").value);
+      
+          var pi = Math.PI;
+      
+          var areaDoCirculo = pi * raio * raio;
+      
+          document.getElementById("resultado").innerHTML = areaDoCirculo.toFixed(1);
+        }
+      </script>
+
+    
+</body>
+</html>

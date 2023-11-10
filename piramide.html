@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <link rel="icon" type="image/png" href="images/icone.png">
+    <link rel="stylesheet" href="stylepiramide.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tronco da pirâmide</title>
+</head>
+
+<body>
+
+    <header class="formulario">
+        <div class="login-box">
+          <h2>Cálculo da Área</h2>
+          <form>
+
+            <!-- ALTURA DO TRONCO -->
+            <div class="user-box">
+              <input type="text" id="alturaTroncoPiramide" required>
+              <label>Altura do tronco da pirâmide</label>
+            </div>
+
+            <!-- BASE MENOR -->
+            <div class="user-box">
+              <input type="text" id="areaBaseMenor" required>
+              <label>Área da base menor</label>
+            </div>
+
+            <!-- BASE MAIOR -->
+            <div class="user-box">
+                <input type="text" id="areaBaseMaior" required>
+                <label>Área da base maior</label>
+              </div>
+
+              <!-- PERIMETRO DA BASE MENOR -->
+              <div class="user-box">
+                <input type="text" id="perimetroBaseMenor" required>
+                <label>O perímetro da base menor</label>
+              </div>
+
+            <div class="botoes">
+            <a id="responda" href="#" onclick="calcularAreaTroncoPiramide()">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              Mandar
+            </a>
+            <a href="index.html">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                voltar
+              </a>
+            </div>
+          </form>
+          <div class="result" id="resultado"></div>
+        </div>
+
+      </header>
+      
+
+      
+      <script>
+        function calcularAreaTroncoPiramide() {
+  // Obtenha os valores dos campos de entrada
+  var alturaTroncoPiramide = parseFloat(document.getElementById("alturaTroncoPiramide").value);
+  var areaBaseMenor = parseFloat(document.getElementById("areaBaseMenor").value);
+  var areaBaseMaior = parseFloat(document.getElementById("areaBaseMaior").value);
+  var perimetroBaseMenor = parseFloat(document.getElementById("perimetroBaseMenor").value);
+
+  // Calcular a distância entre as bases
+  var distanciaBases = alturaTroncoPiramide;
+
+  // Calcular a área da superfície lateral
+  var areaSuperficieLateral = (distanciaBases / 2) * (areaBaseMenor + areaBaseMaior) + perimetroBaseMenor * distanciaBases;
+
+  // Exibir o resultado
+  document.getElementById("resultado").innerHTML = areaSuperficieLateral.toFixed(1);
+}
+
+//         function calcularAreaTroncoPiramide() {
+
+//           var alturaTroncoPiramide = parseFloat(document.getElementById("alturaTroncoPiramide").value);
+//           var areaBaseMenor = parseFloat(document.getElementById("areaBaseMenor").value);
+//           var areaBaseMaior = parseFloat(document.getElementById("areaBaseMaior").value);
+//           var perimetroBaseMenor = parseFloat(document.getElementById("perimetroBaseMenor").value);
+          
+
+//   var distanciaBases = altura;
+//   // Calcular a área da superfície lateral
+//   var areaSuperficieLateral = (distanciaBases / 2) * (areaBaseMenor + areaBaseMaior) + perimetroBaseMenor * distanciaBases;
+
+//   return areaSuperficieLateral;
+
+// // Calcular a área da superfície lateral
+// var areaSuperficieLateralCalculada = calcularAreaTroncoPiramide(alturaTroncoPiramide, areaBaseMenor, areaBaseMaior, perimetroBaseMenor);
+
+// // Exibir o resultado
+
+// document.getElementById("resultado").innerHTML = areaDoCirculo.toFixed(3);
+// }
+
+      </script>
+
+    
+</body>
+</html>

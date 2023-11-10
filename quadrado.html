@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <link rel="icon" type="image/png" href="images/icone.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadrado</title>
+    <link rel="stylesheet" href="styleQuadrado.css">
+</head>
+<body>
+    <header class="formulario">
+        <div class="login-box">
+          <h2>Cálculo da Área</h2>
+          <form>
+            <div class="user-box">
+              <input type="text" id="comprimento" required>
+              <label>Qual o comprimento do quadrado?</label>
+            </div>
+            <div class="botoes">
+            <a id="responda" href="#" onclick="calcularAreaDoQuadrado()">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              Mandar
+            </a>
+            <a href="index.html">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                voltar
+              </a>
+            </div>
+          </form>
+          <div class="result" id="resultado"></div>
+        </div>
+
+      </header>
+
+    <script>
+
+function calcularAreaDoQuadrado(){
+
+    var comprimento = parseFloat(document.getElementById("comprimento").value);
+      
+    var areaDoQuadrado = comprimento * comprimento;
+  
+    document.getElementById("resultado").innerHTML = areaDoQuadrado.toFixed(1);
+}
+
+    </script>
+</body>
+</html>

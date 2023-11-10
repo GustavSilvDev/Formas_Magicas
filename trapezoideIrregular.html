@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <link rel="icon" type="image/png" href="images/icone.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trapezoide Irregular</title>
+    <link rel="stylesheet" href="styleTrapezoide.css">
+</head>
+<body>
+    <header class="formulario">
+        <div class="login-box">
+          <h2>Cálculo da Área</h2>
+          <form>
+
+            <div class="user-box">
+              <input type="text" id="altura" required>
+              <label>Qual é a altura do trapezoide?</label>
+            </div>
+
+            <div class="user-box">
+                <input type="text" id="BaseMenor" required>
+                <label>Qual é a base Menor do trapezoide?</label>
+              </div>
+
+              <div class="user-box">
+                <input type="text" id="BaseMaior" required>
+                <label>Qual é a base Maior do trapezoide?</label>
+              </div>
+
+            <div class="botoes">
+            <a id="responda" href="#" onclick="calcularAreaTrapezoide()">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              Mandar
+            </a>
+            <a href="index.html">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                voltar
+              </a>
+            </div>
+          </form>
+          <div class="result" id="resultado"></div>
+        </div>
+
+      </header>
+
+    <script>
+
+
+
+function calcularAreaTrapezoide() {
+  var altura = parseFloat(document.getElementById("altura").value);
+  var baseMenor = parseFloat(document.getElementById("BaseMenor").value);
+  var baseMaior = parseFloat(document.getElementById("BaseMaior").value);
+
+  var areaTrapezoide = ((baseMenor + baseMaior) * altura) / 2;
+
+  document.getElementById("resultado").innerHTML = areaTrapezoide.toFixed(1);
+}
+
+    </script>
+    
+</body>
+</html>
